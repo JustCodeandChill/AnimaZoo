@@ -5,9 +5,14 @@ import com.xxxx.Food.HerbivoreFood.Grass;
 
 public class Camel extends Animal {
     public Camel(String name) {
-        super("Camel");
+        super("Camel " + name, "camel");
     }
 
+    public Camel() {
+        super("Camel ", "camel");
+    }
+
+    @Override
     public void eat(Food food) {
         if (food instanceof Grass) {
             System.out.println("Inside Camel eat method");
