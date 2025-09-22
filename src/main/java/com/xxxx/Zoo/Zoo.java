@@ -26,4 +26,11 @@ public class Zoo {
     public void setAnimals(List<Animal> animals) {
         this.animals = animals;
     }
+
+    @Override
+    public String toString() {
+        return "Zoo{" +
+                "animals=" + animals +
+                '}';
+    }
 }
