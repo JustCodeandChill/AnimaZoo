@@ -1,4 +1,4 @@
-package com.xxxx.Food;
+package com.xxxx.Feeding.Food;
 
 public abstract class Food {
     private String name;

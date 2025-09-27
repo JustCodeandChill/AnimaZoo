@@ -1,4 +1,4 @@
-package com.xxxx.Food.CarnivoreFood;
+package com.xxxx.Feeding.Food.CarnivoreFood;
 
 public class FreshMeat extends CarnivoreFood {
     public FreshMeat(String name, double price) {

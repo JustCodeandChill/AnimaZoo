@@ -1,6 +1,6 @@
-package com.xxxx.Food.HerbivoreFood;
+package com.xxxx.Feeding.Food.HerbivoreFood;
 
-import com.xxxx.Food.Food;
+import com.xxxx.Feeding.Food.Food;
 
 public class HerbivoreFood extends Food {
     private String type = "herbivore";
