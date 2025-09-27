@@ -1,7 +1,7 @@
 package com.xxxx.ZooAnimal;
 
-import com.xxxx.Food.Food;
-import com.xxxx.Food.HerbivoreFood.Grass;
+import com.xxxx.Feeding.Food.Food;
+import com.xxxx.Feeding.Food.HerbivoreFood.Grass;
 
 public class Camel extends Animal {
     public Camel(String name) {
@@ -12,14 +12,21 @@ public class Camel extends Animal {
         super("Camel ", "camel");
     }
 
-    @Override
-    public void eat(Food food) {
-        if (food instanceof Grass) {
-            System.out.println("Inside Camel eat method");
-            System.out.println( "" + super.getName() + " is eating " + food.getName() + " of type " + food.getType() + " and price " + food.getPrice());
-        } else {
-            System.out.println("Camel can only eat grass. It cant eat " + food.getName());
-        }
+    public Camel(String name, Food food) {
+        super(name, food);
+    }
 
+    @Override
+    public void eat() {
+        Food food = this.getFood();
+        if (this.getFood() instanceof Grass) {
+            System.out.println( "" +
+                    this.getName() + " is eating " +
+                    food.getName() + " of type " +
+                    food.getType() + " and price " +
+                    food.getPrice());
+        } else {
+            throw new IllegalArgumentException("Camel can only eat grass. It cant eat " + food.getName());
+        }
     }
 }

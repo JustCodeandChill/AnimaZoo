@@ -1,10 +1,13 @@
 package com.xxxx.ZooAnimal;
 
-import com.xxxx.Food.Food;
+import com.xxxx.Feeding.Food.Food;
+import com.xxxx.Housing.LivingEnvironment.Habitat;
 
 public abstract class Animal {
     private String name;
     private String type;
+    private Habitat habitat;
+    private Food food;
 
     public Animal(String name) {
         this.name = name;
@@ -15,13 +18,25 @@ public abstract class Animal {
         this.type = type;
     }
 
-    public void eat(Food food) {
-        System.out.println( "" +
-                this.name + " is eating " +
-                food.getName() + " of type " +
-                food.getType() + " and price " +
-                food.getPrice());
+    public Animal(String name, Food food) {
+        this.name = name;
+        this.food = food;
     }
+
+    public Animal(String name, String type, Habitat habitat) {
+        this.name = name;
+        this.type = type;
+        this.habitat = habitat;
+    }
+
+    public Animal(String name, String type, Habitat habitat, Food food) {
+        this.name = name;
+        this.type = type;
+        this.habitat = habitat;
+        this.food = food;
+    }
+
+    public abstract void eat();
 
     public String getName() {
         return name;
@@ -37,5 +52,30 @@ public abstract class Animal {
 
     public void setType(String type) {
         this.type = type;
+    }
+
+    public Habitat getHabitat() {
+        return habitat;
+    }
+
+    public void setHabitat(Habitat habitat) {
+        this.habitat = habitat;
+    }
+
+    public Food getFood() {
+        return food;
+    }
+
+    public void setFood(Food food) {
+        this.food = food;
+    }
+
+    @Override
+    public String toString() {
+        return "Animal{" +
+                "name='" + name + '\'' +
+                ", type='" + type + '\'' +
+                ", habitat=" + habitat +
+                '}';
     }
 }
