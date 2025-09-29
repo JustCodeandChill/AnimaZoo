@@ -31,6 +31,7 @@ public class Main {
     }
 
     public static void testTicketService() {
+        System.out.println("Test Ticketing Service");
         Animal c1 = new Chicken("House Range");
         c1.setFood(new WormsMeat());
         Animal c2 = new Eagle("American Eagle");
@@ -42,6 +43,7 @@ public class Main {
         ticketService.addTicketToVisitor(new NormalTicket(), new Visitor("Keith", 89));
 
         ticketService.getTicketTotalPrice();
+        System.out.println("--------------------------------");
     }
 
     public static void testEntryService() {
